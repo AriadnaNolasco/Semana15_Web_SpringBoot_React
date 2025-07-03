@@ -1,7 +1,7 @@
 // src/services/EmployeeService.js
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_API_URL;
+const BASE_URL = process.env.local.REACT_APP_API_URL;
 
 const EMPLOYEE_API_BASE_PATH = "/empleados";
 class EmployeeService {
