@@ -64,6 +64,7 @@ function EmployeeList() {
           </tr>
         </thead>
         <tbody>
+          {console.log("Valor de employees justo antes del map:", employees, "Es un array:", Array.isArray(employees))}
           {employees.map((employee) => (
             <tr key={employee.id}>
               <td>{employee.id}</td>
