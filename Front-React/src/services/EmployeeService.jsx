@@ -1,29 +1,29 @@
 // src/services/EmployeeService.js
 import axios from 'axios';
 
-// ¡MUY IMPORTANTE! Asegúrate de que esta URL coincida con la de tu backend Spring Boot
-const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/v1/empleados";
+const BASE_URL = process.env.REACT_APP_API_URL;
 
+const EMPLOYEE_API_BASE_PATH = "/empleados";
 class EmployeeService {
 
   getEmployees() {
-    return axios.get(EMPLOYEE_API_BASE_URL);
+    return axios.get(BASE_URL + EMPLOYEE_API_BASE_PATH);
   }
 
   createEmployee(employee) {
-    return axios.post(EMPLOYEE_API_BASE_URL, employee);
+    return axios.post(BASE_URL + EMPLOYEE_API_BASE_PATH, employee);
   }
 
   getEmployeeById(employeeId) {
-    return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+    return axios.get(BASE_URL + EMPLOYEE_API_BASE_PATH + '/' + employeeId);
   }
 
   updateEmployee(employee, employeeId) {
-    return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
+    return axios.put(BASE_URL + EMPLOYEE_API_BASE_PATH + '/' + employeeId, employee);
   }
 
   deleteEmployee(employeeId) {
-    return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+    return axios.delete(BASE_URL + EMPLOYEE_API_BASE_PATH + '/' + employeeId);
   }
 }
 
